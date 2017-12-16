@@ -1,4 +1,4 @@
-# Hướng dẫn chạy chương trình trên Remote Server (Ubuntu14.04)
+# Hướng dẫn chạy chương trình trên Remote Server (Ubuntu14.04 & Apache2, PostGreSQL)
 
 ## 1.Cài đặt PostgreSQL
   - Cài đặt gói
@@ -38,7 +38,7 @@
 	Listen 0.0.0.0:80
 	# Option để apache2 giao tiếp với uwsgi thông qua socket (chú ý từ apache 2.4.9 trở lên mới hỗ trợ)
 	ProxyPass / unix:/var/www/html/items-rest/socket.sock|uwsgi://127.0.0.1:5000/
-	# Option để apache2 giao tiếp với uwsgi thông qua port
+	# Option để apache2 giao tiếp với uwsgi thông qua http
 	Listen 0.0.0.0:80
 	ProxyPass / uwsgi://127.0.0.1:5000/
 	```
@@ -76,7 +76,10 @@
 	module = %(app)
 	home = %(base)/venv
 	pythonpath = %(base)
+	# Giao tiếp với apache2 qua unix socket
 	socket = %(base)/socket.sock
+	# Giao tiếp với Apache2 qua http
+	socket = 127.0.0.1:5000
 	chmod-socket =777
 	processes = 8
 	threads = 8
@@ -124,13 +127,13 @@
 
 ## 4. Thử nghiệm API
   - Dùng curl gọi 1 GET request tới API
-  ```sh
-  curl http://127.0.0.1:80/items
-  ```
-  Kết quả nhận được một dict dữ liệu rỗng:
-  ```sh
-  {}
-  ```
+	```sh
+	curl http://127.0.0.1:80/items
+	```
+  - Kết quả nhận được một dict dữ liệu rỗng:
+	```sh
+	{}
+	```
 
 Tham khảo:
 
