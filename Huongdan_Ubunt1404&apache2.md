@@ -30,6 +30,7 @@
 	```sh
 	apt-get install -y libapache2-mod-proxy-uwsgi
 	a2enmod proxy
+	a2enmod proxy_uwsgi
 	service apache2 restart
 	```
 
@@ -39,7 +40,6 @@
 	# Option để apache2 giao tiếp với uwsgi thông qua socket (chú ý từ apache 2.4.9 trở lên mới hỗ trợ)
 	ProxyPass / unix:/var/www/html/items-rest/socket.sock|uwsgi://127.0.0.1:5000/
 	# Option để apache2 giao tiếp với uwsgi thông qua http
-	Listen 0.0.0.0:80
 	ProxyPass / uwsgi://127.0.0.1:5000/
 	```
 
@@ -90,7 +90,6 @@
 
   - Tạo file service cho uwsgi `/etc/init/uwsgi.conf` (Ubuntu14.04 dùng Upstart (init))
   	```sh
-	uwsgi --master --emperor /var/www/html/items-rest/uwsgi.ini --die-on-term --uid root --gid root --logto /var/www/html/items-rest/emperor.log
 	description "uWSGI items rest"
 	export DATABASE_URL=postgres://root:a@localhost:5432/root
 	start on runlevel [2345]
