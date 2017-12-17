@@ -50,6 +50,11 @@
     }
     ```
 
+  - Xóa file cấu hình mặc định để tránh trùng port 80 (nếu ko xóa thì chuyển sang dùng port khác)
+    ```sh
+    rm /etc/nginx/sites-enabled/default.conf
+    ```
+
   - Tạo soft link cho file cấu hình vừa tạo 
     ```sh
     ln -s /etc/nginx/sites-available/items-rest.conf /etc/nginx/sites-enabled/items-rest.conf

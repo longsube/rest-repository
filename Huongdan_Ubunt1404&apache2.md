@@ -43,6 +43,11 @@
 	ProxyPass / uwsgi://127.0.0.1:5000/
 	```
 
+  - Xóa file cấu hình mặc định để tránh trùng port 80 (nếu ko xóa thì chuyển sang dùng port khác)
+    ```sh
+    rm /etc/apache2/sites-enabled/000-default.conf
+    ```
+
   - Tạo soft link cho file cấu hình vừa tạo 
 	```sh
 	ln -s /etc/apache2/sites-available/items-rest.conf /etc/apache2/sites-enabled/items-rest.conf
@@ -67,7 +72,7 @@
   	mkdir /var/www/html/items-rest
   	cp /root/rest-repository/* /var/www/html/items-rest
   	```
-  	
+
   - Tạo thư mục chứa file log
   	```sh
   	mkdir /var/www/html/items-rest/log
