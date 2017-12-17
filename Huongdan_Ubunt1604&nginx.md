@@ -69,6 +69,11 @@
     cp /root/rest-repository/* /var/www/html/items-rest
     ```
 
+  - Tạo thư mục chứa file log
+    ```sh
+    mkdir /var/www/html/items-rest/log
+    ```
+
   - Sửa file /var/www/html/items-rest/uwsgi.ini
     ```sh 
     [uwsgi]
