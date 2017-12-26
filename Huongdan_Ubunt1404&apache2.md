@@ -73,7 +73,7 @@
   	cp /root/rest-repository/* /var/www/html/items-rest
   	```
 
-  - Cài đặt python 3.5.6
+  - Cài đặt python 3.6.6
   	```sh
   	sudo add-apt-repository ppa:jonathonf/python-3.6
 	sudo apt-get update
@@ -87,16 +87,16 @@
 
   - Tạo virtual enviroment
   	```sh
-  	cd /var/www/html
-  	virtualenv venv -p python3.5
+  	cd /var/www/html/items-rest
+  	virtualenv venv -p python3.6
   	source venv/bin/activate
   	```
 
-  - Cài đặt python3.5 dev
+  - Cài đặt python3.6 dev
   	```sh
-  	apt-get install python3.5-dev -y
+  	apt-get install python3.6-dev -y
   	```
-  	
+
   - Cài đặt các package yêu cầu
   	```sh
   	cd /var/www/html/items-rest
@@ -150,7 +150,7 @@
   	```sh
   	*** Operational MODE: preforking+threaded ***
 	added /var/www/html/items-rest/ to pythonpath.
-	/var/www/html/items-rest/venv/lib/python3.5/site-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+	/var/www/html/items-rest/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
 	  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
 	WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x13d4ab0 pid: 3853 (default app)
 	*** uWSGI is running in multiple interpreter mode ***

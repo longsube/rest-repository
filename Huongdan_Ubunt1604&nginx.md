@@ -81,14 +81,14 @@
 
   - Tạo virtual enviroment
     ```sh
-    cd /var/www/html
-    virtualenv venv -p python3.5
+    cd /var/www/html/items-rest
+    virtualenv venv -p python3.6
     source venv/bin/activate
     ```
 
-  - Cài đặt python3.5 dev
+  - Cài đặt python3.6 dev
     ```sh
-    apt-get install python3.5-dev -y
+    apt-get install python3.6-dev -y
     ```
     
   - Cài đặt các package yêu cầu
