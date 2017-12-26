@@ -73,6 +73,36 @@
   	cp /root/rest-repository/* /var/www/html/items-rest
   	```
 
+  - Cài đặt python 3.5.6
+  	```sh
+  	sudo add-apt-repository ppa:jonathonf/python-3.6
+	sudo apt-get update
+	sudo apt-get install python3.6
+  	```
+
+  - Cài đặt virtualenv
+  	```sh
+  	pip install virtualenv
+  	```
+
+  - Tạo virtual enviroment
+  	```sh
+  	cd /var/www/html
+  	virtualenv venv -p python3.5
+  	source venv/bin/activate
+  	```
+
+  - Cài đặt python3.5 dev
+  	```sh
+  	apt-get install python3.5-dev -y
+  	```
+  	
+  - Cài đặt các package yêu cầu
+  	```sh
+  	cd /var/www/html/items-rest
+  	pip install -r requirement.txt
+  	```
+
   - Tạo thư mục chứa file log
   	```sh
   	mkdir /var/www/html/items-rest/log

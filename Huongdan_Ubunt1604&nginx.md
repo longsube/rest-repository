@@ -74,6 +74,29 @@
     cp /root/rest-repository/* /var/www/html/items-rest
     ```
 
+  - Cài đặt virtualenv
+    ```sh
+    pip install virtualenv
+    ```
+
+  - Tạo virtual enviroment
+    ```sh
+    cd /var/www/html
+    virtualenv venv -p python3.5
+    source venv/bin/activate
+    ```
+
+  - Cài đặt python3.5 dev
+    ```sh
+    apt-get install python3.5-dev -y
+    ```
+    
+  - Cài đặt các package yêu cầu
+    ```sh
+    cd /var/www/html/items-rest
+    pip install -r requirement.txt
+    ```
+    
   - Tạo thư mục chứa file log
     ```sh
     mkdir /var/www/html/items-rest/log
